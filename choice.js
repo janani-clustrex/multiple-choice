@@ -14,7 +14,7 @@ var MyJSON = [
         "option2": "mycelin sheath",
         "option3": "axon",
         "option4": "nerve ending",
-        "answer": "option11"
+        "answer": "option11,option31"
     },
     {
         "question": "Which part of brain controls voluntary action? ",
@@ -82,15 +82,28 @@ var MyJSON = [
     // },
 
 ]
+var i=0;
 var questionNo = 0;
 var selectedOption = "";
+var selectedOptionArray = [];
 var score = 0;
 function check(element) {
-    selectedOption = element.id;
+    selectedOption = selectedOption+","+element.id;
+    
+    //document.getElementsById("option").multiple = true;
+    
 }
 
+function disableRadio() {
+    for(i=0;i<selectedOptionArray;i++){
+        document.getElementById(i).checked = false;
+    }
+}
 
 function next() {
+    selectedOption=selectedOption.substr(1);
+    selectedOptionArray = selectedOption.split(",");
+                
     // if nothing is selcted and next is clicked
     if (selectedOption === "") {
         questionNo = questionNo + 1;
@@ -106,14 +119,14 @@ function next() {
             if (selectedOption === MyJSON[questionNo].answer) {
                 score = score + 1;
                 questionNo = questionNo + 1;
-                console.log('selectedOption', selectedOption)
-                document.getElementById(selectedOption).checked = false;
+                
+                disableRadio()
                 selectedOption = "";
             }
             //wrong one
             else  {
                 questionNo = questionNo + 1;
-                document.getElementById(selectedOption).checked = false;
+                disableRadio()
                 selectedOption = "";
             }
 
@@ -131,14 +144,16 @@ function next() {
             if (selectedOption === MyJSON[questionNo].answer) {
                 score = score + 1;
                 questionNo = questionNo + 1;
-                document.getElementById(selectedOption).checked = false;
+                console.log(selectedOption);
+                disableRadio()
+                console.log(selectedOption);
                 selectedOption = "";
 
             }
             //wrong one
             else {
                 questionNo = questionNo + 1;
-                document.getElementById(selectedOption).checked = false;
+                disableRadio()
                 selectedOption = "";
             }//to make the questions disappear from the screen
             var x = document.getElementById("mcq");
