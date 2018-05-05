@@ -1,15 +1,48 @@
 <html>
     <head>
-
+        <style>
+         body{
+             background-color:royalblue;
+         }   
+        #levels{
+            margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 58px;
+            text-align: center;
+            background-image: url("http://www.elitenewsfeed.net/wp-content/uploads/2017/10/multiple-choice.png") ;
+            background-size: 800px 600px;
+            opacity: 1;
+        
+        }
+       #easy{
+           width: 10em;
+       }
+       #medium{
+            width: 10em;
+       }
+       #tough{
+            width: 10em;
+       }
+        h1{
+            text-align: center;
+        }
+        h2{
+            text-align: center; 
+        }
+        </style>
         <title>HOME</title>
     </head>
     <body>
+        
+        <h1>MULTIPLE CHOICE</h1>
+        <h2>LEVELS</h2>
             <script src="level.js">
                 </script>
-                <fieldset id="levels">
-                        <button type="button" id="easy"><h1><a href="file:///home/clustrex-1/Desktop/JANANI/multiple-choice/mcq.html" onclick="chooseGame('easy')">EASY</a></h1></a></button>
-                        <button type="button" id="medium"><h1><a href="file:///home/clustrex-1/Desktop/JANANI/multiple-choice/mcq.html" onclick="chooseGame('medium')">MEDIUM</a></h1></button>
-                        <button type="button" id="tough"><h1><a href="file:///home/clustrex-1/Desktop/JANANI/multiple-choice/mcq.html" onclick="chooseGame('tough')">TOUGH</a></h1></button>
-                </fieldset<p id="result"></p>
+                <div id="levels">
+                        <button type="button" id="easy"><h3><a href="file:///home/clustrex-1/Desktop/JANANI/multiple-choice/mcq.html" onclick="chooseGame('easy')"> EASY </a></h3></a></button><br><br>
+                        <button type="button" id="medium"><h3><a href="file:///home/clustrex-1/Desktop/JANANI/multiple-choice/mcq.html" onclick="chooseGame('medium')">MEDIUM</a></h3></button><br><br>
+                        <button type="button" id="tough"><h3><a href="file:///home/clustrex-1/Desktop/JANANI/multiple-choice/mcq.html" onclick="chooseGame('tough')">TOUGH </a></h3></button><br><br>
+                </div><p id="result"></p>
     </body>
 </html>

@@ -3,32 +3,77 @@
         <title>multiple choice</title>
         <script src="level.js"></script>
          <script src="choice.js"></script>
+         <style>
+           body{
+            padding: 58px;
+            background-image: url("https://media.giphy.com/media/5xtDarF7ySAj62I3Fks/giphy.gif");
+            background-size: 1400px 1000px;
+            opacity: 1;
+
+           }
+         #mcq{
+          margin: auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 58px;
+            text-align: center;
+            background-image: url("http://joportal.hu/images/news/8601e2079582321c4d87527fb7a26ac6fabefece.jpg");
+            background-size: 1400px 800px;
+            opacity: 1;
+         }
+         #score{
+            text-align: center;
+         }
+         #buttonCls{
+              
+            text-align: center;
+            margin-top: 10px;
+            
+         }
+         #next{
+           width:12%;
+         }
+         #lastPage{
+        border:5px solid darkslateblue;
+          background-color: rgb(98, 0, 255);
+           text-align: center;
+           width:20%;
+           margin: auto;
+           display: none;
+           
+
+         }
+         </style>
     </head>
     <body onload="setQuestion()">
-      <fieldset ID="mcq">
+      <p id="demo"></p>
+      <div ID="mcq">
         
              <h3 id="question">Q1  Which is the highest mountain peak in the world? </h3>
            <div id="option"><label>
-             <input type="radio" id="option11" name="optradio" onclick="check(this)"><p id="option1">himalayas</p>
+             <input type="radio" name="option1" id="option1"  onclick="check(this)"><p id="optTxt1">himalayas</p>
              </label>
     <label >
-            <input type="radio" id="option21" name="optradio1"onclick="check(this)"><p id="option2">mount k2</p>
+            <input type="radio" name="option2" id="option2" onclick="check(this)"><p id="optTxt2">mount k2</p>
             </label>
     <label >
-            <input type="radio" id="option31"  name="optradio2"onclick="check(this)"><p id="option3">mount everest</p>
+            <input type="radio" name="option3" id="option3"  onclick="check(this)"><p id="optTxt3">mount everest</p>
             </label>
     <label >
-            <input type="radio" id="option41" name="optradio3"onclick="check(this)"><p id="option4">mount cook</p>
+            <input type="radio" name="option4" id="option4" onclick="check(this)"><p id="optTxt4">mount cook</p>
             </label>
         </div>  
     
-      </fieldset>
- 
-      <button type="button" id="next" onclick="next()" ><h2>NEXT</h2></button>
-      <button type="button" id="newGame" onclick="location.reload()" ><h2>NEW GAME</h2></button>
-      <p id="Score"></p><h1></h1></p>
+      </div>
+      <div id="buttonCls">
+          <button type="button" id="next" onclick="next()" ><h2 id="nextText">NEXT</h2></button>
+         <button type="button" id="newGame" onclick="reload()" ><h2>NEW GAME</h2></button>
+         <div id="lastPage"> <p id="Score"></p>
+          </div>
+       </div>
+      
            
-        </div>
+        
     </body>
     <script>
     </script>
